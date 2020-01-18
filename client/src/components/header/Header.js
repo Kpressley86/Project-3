@@ -12,14 +12,14 @@ export default function Header() {
           <div className="navbar-menu is-active">
             {/* logo */}
             <div className="navbar-brand">
-              <button className="navbar-item">My Cool App!</button>
+              <button className="navbar-item">Save The Day! <br /> loggin from header.js</button>
             </div>
 
             {/* menu items */}
             <div className="navbar-end">
               {/* if there is no user. show the login button */}
               {!isLoading && !user && (
-                <button onClick={loginWithRedirect} className="navbar-item">
+                <button onClick={loginWithRedirect} className="btn btn-primary navbar-item">
                   Login
                 </button>
               )}
@@ -30,7 +30,7 @@ export default function Header() {
                   <button className="navbar-item">{user.name}</button>
                   <button
                     onClick={() => logout({ returnTo: window.location.origin })}
-                    className="navbar-item"
+                    className="btn btn-danger navbar-item"
                   >
                     Logout
                   </button>

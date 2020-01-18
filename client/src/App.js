@@ -17,7 +17,7 @@ function App() {
           <div className="container has-text-centered">
             {!isLoading && !user && (
               <>
-                <h1>Click Below!</h1>
+                <h1>Loggin from app.js</h1>
                 <button onClick={loginWithRedirect} className="button is-danger">
                   Login
               </button>
