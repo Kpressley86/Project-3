@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import { Container } from "reactstrap";
 import { useAuth0 } from './react-auth0-spa';
 // import Header from './components/header/Header';
