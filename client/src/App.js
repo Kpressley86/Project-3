@@ -4,7 +4,7 @@ import { Container } from "reactstrap";
 import { useAuth0 } from './react-auth0-spa';
 // import Header from './components/header/Header';
 import NavBar from './components/navbar/NavBar';
-import Profile from './components/profile/Profile';
+import Profile from './views/Profile';
 import history from "./utils/history";
 import PrivateRoute from './components/privateRoute/PrivateRoute';
 import './App.css';

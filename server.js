@@ -7,6 +7,7 @@ const app = express();
 const { join } = require("path");
 const morgan = require("morgan");
 
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
