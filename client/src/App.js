@@ -10,6 +10,7 @@ import PrivateRoute from './components/privateRoute/PrivateRoute';
 import './App.css';
 import Footer from "./components/footer/Footer";
 import Loading from "./components/Loading";
+import Form from "./components/form/Form";
 import Home from "./views/Home";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
           </Switch>
         </Container>
         <Footer />
+        <Form />
       </div>
     </Router>
   );
