@@ -26,12 +26,13 @@ const App = () => {
         <NavBar />
         <Container className="flex-grow-1 mt-5">
           <Switch>
+            <Form></Form>
             <Route path="/" exact component={Home} />
             <PrivateRoute path="/profile" component={Profile} />
           </Switch>
         </Container>
         <Footer />
-        <Form />
+    
       </div>
     </Router>
   );
