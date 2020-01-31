@@ -3,6 +3,7 @@ import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cape from '../../images/logo.gif';
 import { useAuth0 } from "../../react-auth0-spa";
+import "./NavBar.css";
 import {
   Collapse,
   Container,
@@ -36,10 +37,15 @@ const NavBar = () => {
           <NavbarBrand>
             <img src={Cape} alt="logo" />
           </NavbarBrand>
+          <NavbarBrand>
+            <h1>SaveTheDay</h1>
+          </NavbarBrand>
+
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
+
                 <NavLink
                   tag={RouterNavLink}
                   to="/"

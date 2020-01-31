@@ -1,5 +1,7 @@
-.App {
+
+#App {
   text-align: center;
+  background-image: url("./images/ProjectThreeImage.jpg");
 }
 
 .App-logo {
@@ -53,4 +55,8 @@
   bottom: 0;
   left: 0;
   right: 0;
+}
+.container{
+  background-image: url(https://image.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg);
+  background-size:cover; 
 }

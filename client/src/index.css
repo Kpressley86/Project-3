@@ -6,6 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(https://media.gettyimages.com/videos/abstract-stripes-background-loop-video-id946759536?s=640x640);
+  background-size: cover;
 }
 
 code {

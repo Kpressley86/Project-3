@@ -12,6 +12,11 @@ import Footer from "./components/footer/Footer";
 import Loading from "./components/Loading";
 import Form from "./components/form/Form";
 import Home from "./views/Home";
+// import GiantBackground from './images/logo.gif';
+// import Graph from "./components/graph/Graph";
+
+
+
 
 const App = () => {
   const { loading } = useAuth0();
@@ -21,19 +26,26 @@ const App = () => {
   }
 
   return (
+
     <Router history={history}>
+      
       <div id="app" className="d-flex flex-column h-100">
+        {/* <GiantBackground> */}
         <NavBar />
-        <Container className="flex-grow-1 mt-5">
-          <Switch>
-            <Form></Form>
-            <Route path="/" exact component={Home} />
-            <PrivateRoute path="/profile" component={Profile} />
-          </Switch>
-        </Container>
+        
+          <Container className="flex-grow-1 mt-5">
+            <Switch>
+              <Form></Form>
+              {/* <Graph></Graph> */}
+              <Route path="/" exact component={Home} />
+              <PrivateRoute path="/profile" component={Profile} />
+            </Switch>
+          </Container>
+        
         <Footer />
-    
+      {/* </GiantBackground> */}
       </div>
+      
     </Router>
   );
 };
