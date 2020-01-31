@@ -1,5 +1,6 @@
 import React from "react";
-import Cape from '../../images/logo.gif';
+import Cape from '../images/logo.gif';
+import './Footer.css'
 
 const Footer = () => (
   <footer className="bg-light p-3 text-center">

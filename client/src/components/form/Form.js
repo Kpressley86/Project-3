@@ -1,68 +1,93 @@
 import React, { Component } from 'react';
-import "./style.css";
+import "./Form.css";
 
 class Form extends Component {
 
     state = {
-        budget: "",
-        expense: ""
+        income: "",
+        bills: "",
+        leftoverIncome: "",
+        cost: "",
+        save: ""
     };
 
     handleInputChange = e => {
-        console.log(e.target);
-        const { budget, value } = e.target;
-        console.log(e.target);
-        console.log(e.target.name);
-        console.log(e.target.value);
+        const { name, value } = e.target;
         this.setState({
-            [budget]: value
+            [name]: value
         });
     };
 
     handleFormSubmit = e => {
         e.preventDefault();
 
-        alert(` ${this.state.addBudget} ${this.state.addExpense}`);
+        alert(`Leftover Income : $ ${this.state.income} - ${this.state.bills}`);
         this.setState({
-            addBudget: "",
-            addExpense: "",
-            leftover: ""
+            income: "",
+            bills: ""
+        });
+    };
+
+    handleFormSave = e => {
+        e.preventDefault();
+
+        alert(`It will take you ${this.state.cost} / ${this.state.save} Months to save enough money!`);
+        this.setState({
+            leftoverIncome: "",
+            save: ""
         });
     };
 
     render() {
-        return(
+        return (
             <div>
                 <form className="form">
                     <input
-                        class ="form_label"
                         type="text"
-                        name="budget"
-                        placeholder="Type your budget"
-                        value={this.state.addBudget}
-                        onChange={(e) => this.handleInputChange(e)}
-                    /><br /> 
-                    <br></br>
-                     <input
-                        class ="form_field"
-                        type="text"
-                        name="expense"
-                        placeholder="Type your expense"
-                        value={this.state.addExpense}
+                        name="income"
+                        placeholder="Monthly Income"
+                        value={this.state.income}
                         onChange={(e) => this.handleInputChange(e)}
                     /><br />
-                    <br></br>
+                    <br />
                     <input
-                        class="form_field"
                         type="text"
-                        name="leftoverfund"
-                        placeholder="Type your leftoverfund"
-                        value={this.state.letfoverfund}
+                        name="bills"
+                        placeholder="Estimated Monthly Bills"
+                        value={this.state.bills}
                         onChange={(e) => this.handleInputChange(e)}
                     />
-                    <br></br>
-                    <br></br>
-                    <input type="submit" value="Submit" />
+                    <br />
+                    <br />
+                    <button
+                        onClick={(e) => this.handleFormSubmit(e)}
+                    >Submit</button>
+                    <br />
+                    <br />
+                    <h1>leftover Income $</h1>
+                    <br />
+                    <br />
+                    <input
+                        type="text"
+                        name="cost"
+                        placeholder="Cost of the item you are saving for?"
+                        value={this.state.cost}
+                        onChange={(e) => this.handleInputChange(e)}
+                    />
+                    <br />
+                    <br />
+                    <input
+                        type="text"
+                        name="save"
+                        placeholder="How much would you like to save?"
+                        value={this.state.save}
+                        onChange={(e) => this.handleInputChange(e)}
+                    />
+                    <br />
+                    <br />
+                    <button
+                        onClick={(e) => this.handleFormSave(e)}
+                    >Save!</button>
                 </form>
             </div>
         )
