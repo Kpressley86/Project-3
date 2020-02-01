@@ -15,7 +15,7 @@ class Graph extends Component {
     let chart = am4core.create("chartdiv", am4charts.PieChart);
 
     chart.paddingRight = 20;
-
+    
     chart.data = [{
       
       "category": "Monthly Expenses",
