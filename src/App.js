@@ -19,13 +19,11 @@ function App() {
           <NavBar />
         </header>
         <Switch>
-          <Route path="/" exact />
+          <Route path="/" exact component={Home}/>
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/external-api" component={ExternalApi} />
         </Switch>
-        <div>
-          <Home />
-        </div>
+        
         <Footer />
       </div>
     </Router>
