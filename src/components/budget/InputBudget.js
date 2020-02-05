@@ -5,10 +5,10 @@ class InputBudget extends Component {
         return (
             <div className="card card-body mb-3">
                 <form>
-                <label>Monthly Income</label>
+                <title>Monthly Income</title>
                     <input className="form-control"
                            name="number" />
-                    <lable>Estimated Monthly Bills</lable>
+                    <title>Estimated Monthly Bills</title>
                     <input className="form-control"
                            name="number" />
                     <button className="btn btn-dark btn-block mt-3">Submit</button>

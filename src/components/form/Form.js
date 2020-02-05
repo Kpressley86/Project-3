@@ -6,7 +6,6 @@ class Form extends Component {
     state = {
         income: "",
         bills: "",
-        leftoverIncome: "",
         cost: "",
         save: ""
     };
@@ -21,21 +20,43 @@ class Form extends Component {
     handleFormSubmit = e => {
         e.preventDefault();
 
-        alert(`Leftover Income : $ ${this.state.income} - ${this.state.bills}`);
         this.setState({
             income: "",
             bills: ""
         });
+
+        let inc = parseInt(`${this.state.income}`);
+        let bil = parseInt(`${this.state.bills}`);
+        let leftoverIncome = (inc - bil);
+        // var formatter = new Intl.NumberFormat("dollar", {
+        //     style: "currency",
+        //     currency: "USD"
+        // });
+
+        // var moneyLeft = (formatter.format(leftoverIncome));
+        document.getElementById("leftoverInc").append(leftoverIncome);
     };
 
     handleFormSave = e => {
         e.preventDefault();
 
-        alert(`It will take you ${this.state.cost} / ${this.state.save} Months to save enough money!`);
         this.setState({
-            leftoverIncome: "",
+            cost: "",
             save: ""
         });
+
+        let cos = parseInt(`${this.state.cost}`);
+        let sav = parseInt(`${this.state.save}`);
+        var savingsTime = (cos / sav);
+
+        function savingTime(sav, leftoverIncome) {
+            if (sav > leftoverIncome) {
+                document.getElementById("months").append('You cant save more $ Money than you have!');
+            } else {
+                document.getElementById("months").append(`It will take you ` + Math.round(savingsTime) + ` Months to save enough money!`);
+            }
+        }
+        savingTime();
     };
 
     render() {
@@ -64,7 +85,7 @@ class Form extends Component {
                     >Submit</button>
                     <br />
                     <br />
-                    <h1>leftover Income $</h1>
+                    <h1 id="leftoverInc">Leftover Income: </h1>
                     <br />
                     <br />
                     <input
@@ -88,6 +109,9 @@ class Form extends Component {
                     <button
                         onClick={(e) => this.handleFormSave(e)}
                     >Save!</button>
+                    <br />
+                    <br />
+                    <p id="months"></p>
                 </form>
             </div>
         )
