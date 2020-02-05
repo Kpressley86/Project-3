@@ -55,7 +55,13 @@
   right: 0;
 }
 
-.container{
-  background-image: url(https://image.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg);
-  background-size:cover; 
+img {
+  height: 100px;
+  width: 150px;
 }
+
+.Company-Name {
+  font-size: 100px;
+}
+
+
