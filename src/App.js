@@ -11,6 +11,7 @@ import './App.css';
 import Footer from "./components/footer/Footer";
 import Home from './views/Home'
 
+
 function App() {
   return (
     <Router history={history}>

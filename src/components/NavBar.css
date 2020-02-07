@@ -1,0 +1,32 @@
+.Company-Name {
+    color: white;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif sans-serif;
+    font-weight: bold;
+}
+.superheroimage {
+    padding-left: 100px;
+    padding-top: 10px;
+}
+
+.btn {
+    padding-top: 20px;
+}
+
+.Home {
+    color: white;
+    padding-top: 20px;
+}
+
+.Profile {
+    color: white;
+    padding-top: 20px;
+}
+
+.Savings {
+    color: white;
+    padding-top: 20px;
+}
+
+.buttongroup {
+    padding-top: 50px;
+}

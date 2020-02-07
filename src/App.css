@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  
+  background-image: url('https://ae01.alicdn.com/kf/HTB1WOYTkbSYBuNjSspiq6xNzpXa4/Vinyl-Photography-Background-Superhero-Cartoon-Night-City-Comics-Boom-Children-Fotografia-Backgrounds-for-Photo-Studio-G.jpg');
+  background-size: cover;
 }
 
 .App-logo {
@@ -57,7 +59,7 @@
 
 img {
   height: 100px;
-  width: 150px;
+  width: 200px;
 }
 
 .Company-Name {
