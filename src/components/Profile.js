@@ -17,24 +17,45 @@ const Profile = () => {
   return (
     <Container className="themed-container" fluid={true}>
       <Fragment>
+        <br></br>
+        <br></br>
         <Row>
-          <Card>
-            <Col xs="2" id="infobox">
-              <img src={user.picture} alt="Profile" />
-            </Col>
-            <Col xs="4">
-              <h2>Welcome {user.name}!</h2>
 
-              <h3>User Email: {user.email}</h3>
+          <Col sm="1"></Col>
+          <Col sm="10" id="infobox">
+            <Card>
+              <Row>
+                <Col xs="2">
+                  <img className="profilepic" src={user.picture} alt="Profile" />
+                </Col>
+                <Col sm="10">
+                  <div className="card card-body mb-3">
+                    <form>
+                      <h4>Welcome {user.name}!</h4>
+                      <h4>User Email: {user.email}</h4>
+                    </form>
+                  </div>
+                </Col>
+              </Row>
+
               {/* <code>{JSON.stringify(user, null, 2)}</code> */}
-            </Col>
-          </Card>
-          
+            </Card>
+          </Col>
+          <Col sm="1"></Col>
+
+
         </Row>
+        <br></br>
+        <br></br>
         <Row>
-          <div>
-            <FormChartData />
-          </div>
+          
+          <Col sm="12">
+            <div>
+              
+              <FormChartData />
+            </div>
+          </Col>
+          
         </Row>
       </Fragment>
 

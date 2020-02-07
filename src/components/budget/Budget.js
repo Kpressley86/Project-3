@@ -3,17 +3,36 @@ import InputBudget from './InputBudget';
 import InputExpenses from './InputExpenses';
 import DisplayBudget from '../display/DisplayBudget';
 
+import { Container, Row, Col } from 'reactstrap';
+
 const Budget = () => {
     return (
-        <div className="row">
-            <div className="col-lg-3">
-                <InputBudget />
-                <InputExpenses />
-            </div>
-            <div className="col-lg-8">
-                <DisplayBudget />
-            </div>
+        <div>
+            <Container className="themed-container" fluid={true}>
+                
+                    <Row>
+
+                        <Col sm="6">
+                            <InputBudget />
+                        </Col>
+                        <Col sm="6">
+                            <InputExpenses />
+                        </Col>
+
+                    </Row>
+                    <br></br>
+                    <br></br>
+                    <Row>
+
+
+                        <DisplayBudget />
+
+
+                    </Row>
+                
+            </Container>
         </div>
+
     )
 }
 
