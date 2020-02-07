@@ -62,7 +62,7 @@ class Form extends Component {
     render() {
         return (
             <div>
-                <form className="form">
+                {/* <form className="form">
                     <input
                         type="text"
                         name="income"
@@ -112,7 +112,7 @@ class Form extends Component {
                     <br />
                     <br />
                     <p id="months"></p>
-                </form>
+                </form> */}
             </div>
         )
     }

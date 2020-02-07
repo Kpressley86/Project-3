@@ -8,6 +8,8 @@ const FormChartData = () => {
         <div>
             <Form />
             <Budget />
+            <br></br>
+            <br></br>
             <Graph />
         </div>
     );
