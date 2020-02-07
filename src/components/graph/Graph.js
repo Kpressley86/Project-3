@@ -15,18 +15,18 @@ class Graph extends Component {
     let chart = am4core.create("chartdiv", am4charts.PieChart);
 
     chart.paddingRight = 20;
-    
+
     chart.data = [{
-      
+
       "category": "Monthly Expenses",
       "litres": 501.9
-      
+
     }, {
-      
+
       "category": "Left Over Funds",
       "litres": 301.9
     }, {
-      
+
       "category": "Amount Still Left to Save",
       "litres": 201.1
     }];
@@ -54,7 +54,9 @@ class Graph extends Component {
 
   render() {
     return (
-      <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
+      <card>
+        <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
+      </card>
     );
   }
 }
