@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BalanceDisplay = () => {
+const BalanceDisplay = (props) => {
     return (
         <div className="row">
             <div className="col-lg-4">
@@ -15,7 +15,7 @@ const BalanceDisplay = () => {
                 <div className="card">
                     <div className="card-header">Big Purchase Amount</div>
                     <div className="card-body">
-                        <h5 className="text-center card-title">10000</h5>
+                        <h5 className="text-center card-title"> </h5>
                     </div>
                 </div>
             </div>

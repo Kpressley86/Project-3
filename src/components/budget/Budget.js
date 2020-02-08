@@ -5,7 +5,7 @@ import DisplayBudget from '../display/DisplayBudget';
 
 import { Container, Row, Col } from 'reactstrap';
 
-const Budget = () => {
+const Budget = (props) => {
     return (
         <div>
             <Container className="themed-container" fluid={true}>
@@ -16,7 +16,7 @@ const Budget = () => {
                             <InputBudget />
                         </Col>
                         <Col sm="6">
-                            <InputExpenses />
+                            <InputExpenses/>
                         </Col>
 
                     </Row>
@@ -25,7 +25,7 @@ const Budget = () => {
                     <Row>
 
 
-                        <DisplayBudget />
+                        <DisplayBudget/>
 
 
                     </Row>
