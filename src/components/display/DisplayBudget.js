@@ -2,11 +2,11 @@ import React from 'react';
 import BalanceDisplay from './BalanceDisplay';
 import ExpensesList from './ExpensesList';
 
-const DisplayBudget = () => {
+const DisplayBudget = (props) => {
     return (
         <div className="card card-body">
             <h3 className="text-center">YOUR BUDGET INFORMATION</h3>
-            <BalanceDisplay />
+            <BalanceDisplay/>
             <ExpensesList />
         </div>
     )
