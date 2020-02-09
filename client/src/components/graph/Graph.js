@@ -15,7 +15,9 @@ am4core.useTheme(am4themes_animated);
 // what you are putting twards savings and whatevers left over
 
 class Graph extends Component {
+ 
   componentDidMount() {
+    this.loadSave();
     let chart = am4core.create("chartdiv", am4charts.PieChart);
 
     chart.paddingRight = 20;
@@ -48,13 +50,31 @@ class Graph extends Component {
     pieSeries.hiddenState.properties.startAngle = -90;
 
     this.chart = chart;
-  }
+  };
 
   componentWillUnmount() {
     if (this.chart) {
       this.chart.dispose();
     }
-  }
+  };
+
+  // Loads all Save  and sets them to this.state.Save
+loadSave = () => {
+  API.getSaves()
+      .then(res =>
+          this.setState({ Save: res.data, 
+              item: "",
+              income: "",
+              bills: "",
+              leftoverIncome: "",
+              cost: "",
+              save: "",
+              time: "",
+              date: Date.now
+          })
+      ) 
+      .catch(err => console.log(err));
+};
 
   render() {
     return (

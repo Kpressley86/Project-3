@@ -24,7 +24,7 @@ class InputBudget extends Component {
         e.preventDefault();
 
         if (this.state.item && this.state.income && this.state.bills) {
-            API.saveSaves({
+            API.saveSave({
                 item: this.state.item,
                 income: this.state.income,
                 bills: this.state.bills,
@@ -44,7 +44,7 @@ class InputBudget extends Component {
         e.preventDefault();
 
         if (this.state.cost && this.state.save) {
-            API.saveSaves({
+            API.saveSave({
                 cost: this.state.cost,
                 save: this.state.save
             })
@@ -86,6 +86,7 @@ class InputBudget extends Component {
                                 />
                                 <button
                                     className="btn btn-dark btn-block mt-3"
+                                    disabled={!(this.state.item && this.state.income && this.state.bills)}
                                     onClick={(e) => this.handleFormSubmit(e)}
                                 >Submit</button>
                             </form>
@@ -113,6 +114,7 @@ class InputBudget extends Component {
                                 />
                                 <button
                                     className="btn btn-dark btn-block mt-3"
+                                    disabled={!(this.state.cost && this.state.save)}
                                     onClick={(e) => this.handleFormSave(e)}
                                 >Save</button>
                             </form>

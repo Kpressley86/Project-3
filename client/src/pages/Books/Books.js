@@ -3,20 +3,18 @@ import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input } from "../../components/Form";
 
 class Save extends Component {
   // Setting our component's initial state
   state = {
-    //item: "",
-    //income: "",
-    Save: [],
-    //bills: "",
-    title: "",
-    //cost: "",
-    author: "",
-    //save: ""
-    synopsis: ""
+    item: "",
+    income: "",
+    bills: "",
+    leftoverIncome: "",
+    cost: "",
+    save: "",
+    time: "",
   };
 
   // When the component mounts, load all Save and save them to this.state.Save
@@ -29,87 +27,42 @@ class Save extends Component {
     API.getSaves()
       .then(res =>
         this.setState({
-          save: res.data, title: "", author: "", synopsis: ""
-          //income: "", bills: "", cost: "", save: "" 
+          Save: res.data, 
+          item: "",
+          income: "",
+          bills: "",
+          leftoverIncome: "",
+          cost: "",
+          save: "",
+          time: "",
         })
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads Save from the db
-  deleteBook = id => {
-    API.deleteBook(id)
+  // Deletes a save from the database with a given id, then reloads Save from the db
+  deleteSave = id => {
+    API.deleteSave(id)
       .then(res => this.loadSave())
       .catch(err => console.log(err));
-  };
-
-  // Handles updating component state when the user types into the input field
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload Save from the database
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveSave({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
-      })
-        .then(res => this.loadSave())
-        .catch(err => console.log(err));
-    }
   };
 
   render() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <form>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Book
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
+          <Col size="md-12 sm-12">
             {this.state.Save.length ? (
               <List>
-                {this.state.save.map(book => {
+                {this.state.save.map(save => {
                   return (
-                    <ListItem key={book._id}>
-                      <a href={"/save/" + book._id}>
+                    <ListItem key={save._id}>
+                      <a href={"/save/" + save._id}>
                         <strong>
-                          {book.title} by {book.author}
+                          {save.item} by {save.income}
                         </strong>
                       </a>
-                      <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                      <DeleteBtn onClick={() => this.deleteSave(save._id)} />
                     </ListItem>
                   );
                 })}
@@ -119,6 +72,41 @@ class Save extends Component {
               )}
           </Col>
         </Row>
+        <Container>
+                <Row>
+                    <Col sm="12">
+                        <div className="card card-body">
+                            <h3 className="text-center">BUDGET INFORMATION</h3>
+                            <div className="row">
+                                <div className="col-lg-4">
+                                    <div className="card">
+                                        <div className="card-header">Leftover Income</div>
+                                        <div className="card-body">
+                                            <h5 className="text-center card-title">GET.leftoverIncome</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4">
+                                    <div className="card">
+                                        <div className="card-header">GET.item</div>
+                                        <div className="card-body">
+                                            <h5 className="text-center card-title"> GET.cost</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4">
+                                    <div className="card">
+                                        <div className="card-header">Time it will take to save</div>
+                                        <div className="card-body">
+                                            <h5 className="text-center card-title">GET.time</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
       </Container>
     );
   }

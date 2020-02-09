@@ -21,7 +21,7 @@ class DisplayBudget extends Component {
                     time: "",
                     date: Date.now
                 })
-            )
+            ) 
             .catch(err => console.log(err));
     };
     render(props) {
@@ -30,29 +30,29 @@ class DisplayBudget extends Component {
                 <Row>
                     <Col sm="12">
                         <div className="card card-body">
-                            <h3 className="text-center">YOUR BUDGET INFORMATION</h3>
+                            <h3 className="text-center">BUDGET INFORMATION</h3>
                             <div className="row">
                                 <div className="col-lg-4">
                                     <div className="card">
                                         <div className="card-header">Leftover Income</div>
                                         <div className="card-body">
-                                            <h5 className="text-center card-title">1000</h5>
+                                            <h5 className="text-center card-title">GET.leftoverIncome</h5>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-4">
                                     <div className="card">
-                                        <div className="card-header">Big Purchase Amount</div>
+                                        <div className="card-header">GET.item</div>
                                         <div className="card-body">
-                                            <h5 className="text-center card-title"> </h5>
+                                            <h5 className="text-center card-title"> GET.cost</h5>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-4">
                                     <div className="card">
-                                        <div className="card-header">How Much You Save</div>
+                                        <div className="card-header">Time it will take to save</div>
                                         <div className="card-body">
-                                            <h5 className="text-center card-title">500</h5>
+                                            <h5 className="text-center card-title">GET.time</h5>
                                         </div>
                                     </div>
                                 </div>
