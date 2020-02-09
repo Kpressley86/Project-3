@@ -1,9 +1,9 @@
 import React from 'react';
 import InputBudget from './InputBudget';
-import DisplayBudget from '../display/DisplayBudget';
+import DisplayBudget from './DisplayBudget';
 import { Container, Row, Col } from 'reactstrap';
 
-const Budget = (props) => {
+const Budget = () => {
     return (
         <div>
             <Container className="themed-container" fluid={true}>

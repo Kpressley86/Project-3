@@ -26,17 +26,17 @@ class InputBudget extends Component {
             API.saveSaves({
                 item: this.state.item,
                 income: this.state.income,
-                bills: this.state.bills
+                bills: this.state.bills,
+                leftoverIncome: (parseInt(`${this.state.income}`) - parseInt(`${this.state.bills}`)),
             })
                 .then(res => this.loadSave())
                 .catch(err => console.log(err));
         }
 
-        let item = (`${this.state.item}`);
         let inc = parseInt(`${this.state.income}`);
         let bil = parseInt(`${this.state.bills}`);
         let leftoverIncome = (inc - bil);
-
+        console.log(leftoverIncome);
     };
 
     handleFormSave = e => {
@@ -50,13 +50,9 @@ class InputBudget extends Component {
                 .then(res => this.loadSave())
                 .catch(err => console.log(err));
         }
-
-        let cost = parseInt(`${this.state.cost}`);
-        let save = parseInt(`${this.state.save}`);
-
     };
 
-    render(props) {
+    render() {
         return (
             <Container>
                 <Row>
@@ -123,7 +119,7 @@ class InputBudget extends Component {
                     </Col>
                 </Row>
             </Container>
-        )
+        );
     }
 }
 
