@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import { Container, Row, Col } from 'reactstrap';
-import { List, ListItem } from "../../components/List";
 import './Books.css';
 
 class Save extends Component {
@@ -53,20 +52,20 @@ class Save extends Component {
         <Row>
           <Col size="md-12 sm-12">
             {this.state.Save ? (
-              <List>
+              <div>
                 {this.state.Save.map(Save => {
                   return (
-                    <ListItem key={Save._id}>
+                    <div key={Save._id}>
                       <a href={"/save/" + Save._id}>
                         <strong>
                           {Save.item} by {Save.income}
                         </strong>
                       </a>
                       <DeleteBtn onClick={() => this.deleteSave(Save._id)} />
-                    </ListItem>
+                    </div>
                   );
                 })}
-              </List>
+              </div>
             ) : (
                 <h3>No Results to Display</h3>
               )}
