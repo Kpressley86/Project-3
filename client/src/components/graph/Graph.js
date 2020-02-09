@@ -4,6 +4,9 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { Card } from 'reactstrap';
+import API from "../../utils/API";
+import { Container, Row, Col } from 'reactstrap';
+
 
 am4core.useTheme(am4themes_animated);
 
@@ -55,10 +58,15 @@ class Graph extends Component {
 
   render() {
     return (
-      <Card>
-        <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
-      </Card>
-      
+      <Container>
+        <Row>
+          <Col sm="12">
+            <Card>
+              <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

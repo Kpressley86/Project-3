@@ -5,33 +5,41 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class Books extends Component {
+class Save extends Component {
   // Setting our component's initial state
   state = {
-    books: [],
+    //item: "",
+    //income: "",
+    Save: [],
+    //bills: "",
     title: "",
+    //cost: "",
     author: "",
+    //save: ""
     synopsis: ""
   };
 
-  // When the component mounts, load all books and save them to this.state.books
+  // When the component mounts, load all Save and save them to this.state.Save
   componentDidMount() {
-    this.loadBooks();
-  }
+    this.loadSave();
+  };
 
-  // Loads all books  and sets them to this.state.books
-  loadBooks = () => {
-    API.getBooks()
+  // Loads all Save  and sets them to this.state.Save
+  loadSave = () => {
+    API.getSaves()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({
+          save: res.data, title: "", author: "", synopsis: ""
+          //income: "", bills: "", cost: "", save: "" 
+        })
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
+  // Deletes a book from the database with a given id, then reloads Save from the db
   deleteBook = id => {
     API.deleteBook(id)
-      .then(res => this.loadBooks())
+      .then(res => this.loadSave())
       .catch(err => console.log(err));
   };
 
@@ -44,16 +52,16 @@ class Books extends Component {
   };
 
   // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
+  // Then reload Save from the database
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.author) {
-      API.saveBook({
+      API.saveSave({
         title: this.state.title,
         author: this.state.author,
         synopsis: this.state.synopsis
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadSave())
         .catch(err => console.log(err));
     }
   };
@@ -91,12 +99,12 @@ class Books extends Component {
             </form>
           </Col>
           <Col size="md-6 sm-12">
-            {this.state.books.length ? (
+            {this.state.Save.length ? (
               <List>
-                {this.state.books.map(book => {
+                {this.state.save.map(book => {
                   return (
                     <ListItem key={book._id}>
-                      <a href={"/books/" + book._id}>
+                      <a href={"/save/" + book._id}>
                         <strong>
                           {book.title} by {book.author}
                         </strong>
@@ -107,8 +115,8 @@ class Books extends Component {
                 })}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>
@@ -116,4 +124,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Save;

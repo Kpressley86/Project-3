@@ -1,12 +1,10 @@
 import React from 'react';
-import Form from '../components/Form/Form';
 import Graph from '../components/graph/Graph';
 import Budget from '../components/budget/Budget';
 
 const FormChartData = () => {
     return (
         <div>
-            <Form />
             <Budget />
             <br></br>
             <br></br>
