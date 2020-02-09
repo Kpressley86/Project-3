@@ -34,7 +34,7 @@ class DisplayBudget extends Component {
                             <div className="row">
                                 <div className="col-lg-4">
                                     <div className="card">
-                                        <div className="card-header">Leftover Income</div>
+                                        <div className="card-header text-center">Leftover Income</div>
                                         <div className="card-body">
                                             <h5 className="text-center card-title">GET.leftoverIncome</h5>
                                         </div>
@@ -42,7 +42,7 @@ class DisplayBudget extends Component {
                                 </div>
                                 <div className="col-lg-4">
                                     <div className="card">
-                                        <div className="card-header">GET.item</div>
+                                        <div className="card-header text-center">GET.item</div>
                                         <div className="card-body">
                                             <h5 className="text-center card-title"> GET.cost</h5>
                                         </div>
@@ -50,7 +50,7 @@ class DisplayBudget extends Component {
                                 </div>
                                 <div className="col-lg-4">
                                     <div className="card">
-                                        <div className="card-header">Time it will take to save</div>
+                                        <div className="card-header text-center">Time it will take to save</div>
                                         <div className="card-body">
                                             <h5 className="text-center card-title">GET.time</h5>
                                         </div>

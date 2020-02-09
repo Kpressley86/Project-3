@@ -48,66 +48,42 @@ class Save extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container className="oldSaves">
         <Row>
-          <Col size="md-12 sm-12">
-            {this.state.Save ? (
-              <div>
-                {this.state.Save.map(Save => {
-                  return (
-                    <div key={Save._id}>
-                      <a href={"/save/" + Save._id}>
-                        <strong>
-                          {Save.item} by {Save.income}
-                        </strong>
-                      </a>
-                      <DeleteBtn onClick={() => this.deleteSave(Save._id)} />
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
-                <h3>No Results to Display</h3>
-              )}
+          <Col sm="12">
+          <div className="card card-body">
+            <DeleteBtn onClick={() => this.deleteSave(Save._id)} />
+            <h3 className="text-center">Old Saving</h3>
+            <Row>
+              <Col lg="4">
+                <div className="card">
+                  <div className="card-header text-center">Leftover Income</div>
+                  <div className="card-body">
+                    <h5 className="text-center card-title">GET.leftoverIncome</h5>
+                  </div>
+                </div>
+              </Col>
+              <Col lg="4">
+                <div className="card">
+                  <div className="card-header text-center">GET.item</div>
+                  <div className="card-body">
+                    <h5 className="text-center card-title"> GET.cost</h5>
+                  </div>
+                </div>
+              </Col>
+              <Col lg="4">
+                <div className="card">
+                  <div className="card-header text-center">Time it will take to save</div>
+                  <div className="card-body">
+                    <h5 className="text-center card-title">GET.time</h5>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+</div>
           </Col>
         </Row>
-        <Container className="oldSaves">
-          <Row>
-            <Col sm="12">
-              <div className="card card-body">
-                <DeleteBtn onClick={() => this.deleteSave(Save._id)} />
-                <h3 className="text-center">BUDGET INFORMATION</h3>
-                <Row>
-                  <Col lg="4">
-                    <div className="card">
-                      <div className="card-header">Leftover Income</div>
-                      <div className="card-body">
-                        <h5 className="text-center card-title">GET.leftoverIncome</h5>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col lg="4">
-                    <div className="card">
-                      <div className="card-header">GET.item</div>
-                      <div className="card-body">
-                        <h5 className="text-center card-title"> GET.cost</h5>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col lg="4">
-                    <div className="card">
-                      <div className="card-header">Time it will take to save</div>
-                      <div className="card-body">
-                        <h5 className="text-center card-title">GET.time</h5>
-                      </div>
-                    </div>
-                  </Col>
-                </Row>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </Container>
+      </Container >
     );
   }
 }
