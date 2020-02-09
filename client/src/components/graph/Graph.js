@@ -58,7 +58,7 @@ class Graph extends Component {
     }
   };
 
-  // Loads all Save  and sets them to this.state.Save
+  // Loads all Saves and sets them to this.state.Save
 loadSave = () => {
   API.getSaves()
       .then(res =>

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
+import { Container, Row, Col } from 'reactstrap';
 import { List, ListItem } from "../../components/List";
-import { Input } from "../../components/Form";
 
 class Save extends Component {
   // Setting our component's initial state
@@ -52,17 +51,17 @@ class Save extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12 sm-12">
-            {this.state.Save.length ? (
+            {this.state.Save ? (
               <List>
-                {this.state.save.map(save => {
+                {this.state.Save.map(Save => {
                   return (
-                    <ListItem key={save._id}>
-                      <a href={"/save/" + save._id}>
+                    <ListItem key={Save._id}>
+                      <a href={"/save/" + Save._id}>
                         <strong>
-                          {save.item} by {save.income}
+                          {Save.item} by {Save.income}
                         </strong>
                       </a>
-                      <DeleteBtn onClick={() => this.deleteSave(save._id)} />
+                      <DeleteBtn onClick={() => this.deleteSave(Save._id)} />
                     </ListItem>
                   );
                 })}
