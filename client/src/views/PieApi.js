@@ -7,9 +7,9 @@ import { Container, Row, Col } from 'reactstrap';
 const ExternalApi = () => {
 
   return (
-    <Container>
+    <Container className="themed-container" fluid={true}>>
       <Row>
-        <Col md="6">
+        <Col md="12">
           <Books />
         </Col>
       </Row>

@@ -3,6 +3,7 @@ import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import { Container, Row, Col } from 'reactstrap';
 import { List, ListItem } from "../../components/List";
+import './Books.css';
 
 class Save extends Component {
   // Setting our component's initial state
@@ -26,7 +27,7 @@ class Save extends Component {
     API.getSaves()
       .then(res =>
         this.setState({
-          Save: res.data, 
+          Save: res.data,
           item: "",
           income: "",
           bills: "",
@@ -71,41 +72,42 @@ class Save extends Component {
               )}
           </Col>
         </Row>
-        <Container>
+        <Container className="oldSaves">
+          <Row>
+            <Col sm="12">
+              <div className="card card-body">
+                <DeleteBtn onClick={() => this.deleteSave(Save._id)} />
+                <h3 className="text-center">BUDGET INFORMATION</h3>
                 <Row>
-                    <Col sm="12">
-                        <div className="card card-body">
-                            <h3 className="text-center">BUDGET INFORMATION</h3>
-                            <div className="row">
-                                <div className="col-lg-4">
-                                    <div className="card">
-                                        <div className="card-header">Leftover Income</div>
-                                        <div className="card-body">
-                                            <h5 className="text-center card-title">GET.leftoverIncome</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="card">
-                                        <div className="card-header">GET.item</div>
-                                        <div className="card-body">
-                                            <h5 className="text-center card-title"> GET.cost</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="card">
-                                        <div className="card-header">Time it will take to save</div>
-                                        <div className="card-body">
-                                            <h5 className="text-center card-title">GET.time</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
+                  <Col lg="4">
+                    <div className="card">
+                      <div className="card-header">Leftover Income</div>
+                      <div className="card-body">
+                        <h5 className="text-center card-title">GET.leftoverIncome</h5>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col lg="4">
+                    <div className="card">
+                      <div className="card-header">GET.item</div>
+                      <div className="card-body">
+                        <h5 className="text-center card-title"> GET.cost</h5>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col lg="4">
+                    <div className="card">
+                      <div className="card-header">Time it will take to save</div>
+                      <div className="card-body">
+                        <h5 className="text-center card-title">GET.time</h5>
+                      </div>
+                    </div>
+                  </Col>
                 </Row>
-            </Container>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </Container>
     );
   }

@@ -4,7 +4,7 @@ import './Footer.css'
 import { Container, Row, Col } from 'reactstrap';
 
 const Footer = () => (
-  <Container className="themed-container" fluid={true} style={{backgroundColor: '#2F4F4F'}}>
+  <Container className="themed-container footer" fluid={true} style={{backgroundColor: '#2F4F4F'}}>
 
     <footer className="p-3 text-center">
       <Row>
