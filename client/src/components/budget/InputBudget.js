@@ -9,7 +9,8 @@ class InputBudget extends Component {
         bills: "",
         leftoverIncome: "",
         cost: "",
-        save: ""
+        save: "",
+        time: "",
     };
 
     handleInputChange = e => {

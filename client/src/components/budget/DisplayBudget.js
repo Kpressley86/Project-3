@@ -11,7 +11,16 @@ class DisplayBudget extends Component {
     loadSave = () => {
         API.getSaves()
             .then(res =>
-                this.setState({ save: res.data, income: "", bills: "", cost: "", save: "" })
+                this.setState({ Save: res.data, 
+                    item: "",
+                    income: "",
+                    bills: "",
+                    leftoverIncome: "",
+                    cost: "",
+                    save: "",
+                    time: "",
+                    date: Date.now
+                })
             )
             .catch(err => console.log(err));
     };

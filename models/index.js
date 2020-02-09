@@ -1,3 +1,3 @@
 module.exports = {
-  Save: require("./savings")
+  Save: require("./savings").default
 };

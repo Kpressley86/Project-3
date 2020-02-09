@@ -1,15 +1,17 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+import { Schema as _Schema, model } from "mongoose";
+const Schema = _Schema;
 
 const saveSchema = new Schema({
   item: { type: String, required: true },
   income: { type: String, required: true },
   bills: { type: String, required: true },
+  leftoverIncome:"",
   cost: { type: String, required: true },
   save: { type: String, required: true },
+  time: "",
   date: { type: Date, default: Date.now }
 });
 
-const Save = mongoose.model("Save", saveSchema);
+const Save = model("Save", saveSchema);
 
-module.exports = Save;
+export default Save;
