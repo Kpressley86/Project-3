@@ -11,7 +11,7 @@ class InputExpenses extends Component {
                     <label>Amount To Save</label>
                     <input className="form-control"
                            name="amount" />
-                   <button className="btn btn-dark btn-block mt-3">Save</button>
+                   <button className="btn btn-primary btn-block mt-3" style={{background: "#2f4f4f"}}>Save</button>
                 </form>
             </div>
         )

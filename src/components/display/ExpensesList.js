@@ -7,12 +7,12 @@ class ExpensesList extends Component {
                 <table className="table-bordered">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Amount</th>
+                            <th className="title text-center" style={{background: "#cc3333"}}>TITLE</th>
+                            <th className="amount text-center" style={{background: "#cc3333"}}>AMOUNT</th>
                         </tr>
                     </thead>
-                    <tbody>
-                    </tbody>
+                   
+                   
                 </table>
             </div>
         )

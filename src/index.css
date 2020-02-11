@@ -6,10 +6,320 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./components/images/fixedproject3background.jpg");
-}
+  background: #eee;
+  color: #111;
+}  
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+body * {
+  transition: all 0.300s ease-in-out;
+}
+
+.container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 10px 54px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 54px -11px rgba(0,0,0,0.75);
+   box-shadow: 0px 10px 54px -11px rgba(0,0,0,0.75);
+}
+
+/*-------Navigation Bar -----------*/
+
+nav {
+  position: fixed;
+  z-index: 99;
+  background: white;
+  width: 100%;
+  margin: 0 auto;  
+}
+
+/*-------Header-----*/
+
+header {
+  background: url("../src/pictures/chart1.jpg");
+  background-size: cover;
+  height: 700px;
+  background-position: center;
+  position: relative;
+ 
+}
+
+header div.head {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 70%;
+  grid-template-columns: repeat(2,1fr);
+  margin: 0 auto;
+  padding-top: 12%;
+  align-items: center;
+  
+}
+
+header div.head  {
+  color: red;
+
+}
+
+header div.head h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 0px;
+  margin: 0 auto;
+  letter-spacing: 4px;
+  border-right: 2px solid red;
+}
+
+header p {
+  padding-left: 50px;
+  color: red;
+  font-size: 20px;
+}
+
+.Company-Name {
+  color: #2f4f4f;
+  margin-top: 10px;
+  font-size: 60px;
+  font-style: bold;
+  margin-right: 100px;
+}
+
+.buttonGroup {
+  background-color: #8B0000;
+  margin-top: 15px;
+  color: white;
+  font-size: 25px;
+  border-radius: 2rem;
+}
+
+.logout-button {
+  background-color: #8B0000;
+  margin-top: 15px;
+  color: white;
+  font-size: 25px;
+  border-radius: 2rem;
+}
+
+Link {
+  margin: auto;
+  float: right;
+}
+
+
+/*---Team---*/
+.team-card {
+  border-width: 1px;
+  border-color: #2f4f4f;
+}
+
+/*------------- MAIN SECTION -------------------*/
+
+
+main {
+ 
+  position: relative;
+  z-index: 3;
+ overflow: hidden;
+}
+
+
+main section {
+  width: 70%;
+  padding: 90px 0;
+  margin: 50px auto 150px auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+
+}
+
+main section h2 {
+  font-size: 4.3rem;
+  color: black;
+  text-transform: uppercase;
+ line-height: 4.2rem; 
+ padding-right: 10px;
+ border-right: 3px solid #ddd;
+ margin: 160px auto 0px auto;
+
+}
+
+
+
+main section div {
+  position: relative;
+
+}
+
+main section div p {
+  padding-left: 10px;
+  font-size: 25px;
+  font-style: italic;
+  color: red;
+}
+
+
+/*----Footer---*/
+
+@media (max-width:1310px) and (min-width:1100px) {
+    
+    header div.head {
+      width: 75%;
+      padding-top: 190px;
+    }
+    header div.head h1 {
+      font-size: 4rem;
+      
+    }
+    
+    main section {
+      width: 90%;
+      padding: 90px 0;
+      margin: 0px auto 50px auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      
+    }
+    main section div p {
+      padding: 0px 90px;
+    }
+    
+}
+
+
+
+@media (max-width:1099px) and (min-width:850px) {
+  header {
+    height: 350px;
+    background-position: bottom;
+  }
+
+  header div.head {
+    width: 75%;
+    padding-top: 400px;
+    grid-template-columns: 1fr;
+    
+  }
+  header div.head h1 {
+    font-size: 4rem;
+    
+  }
+  main section:first-of-type{
+    margin-top: 400px;
+  }
+
+  main section {
+    width: 90%;
+    padding: 90px 0;
+    margin: 0px auto 50px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+  }
+  main section div p {
+    padding: 0px 90px;
+  }
+  
+}
+
+
+@media (max-width:849px) and (min-width:600px) {
+  header {
+  height: 440px;
+
+  }
+  
+  
+  header div.head {
+    width: 75%;
+    padding-top: 120px;
+    grid-template-columns: 1fr;
+  }
+  header div.head h1 {
+    font-size: 3rem;
+    
+  }
+
+
+
+  
+  main section {
+    width: 90%;
+    padding: 90px 0;
+    margin: 0px auto 50px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+  }
+  main section div p {
+    padding: 0px 90px;
+  }
+
+}
+
+
+@media (max-width:599px) and (min-width:0px) {
+  nav {
+   text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  header {
+     
+    background-size: 160%;
+    height: 270px;
+    position: relative;
+   
+  }
+  
+  header div.head {
+    width: 75%;
+    grid-template-columns: 1fr;
+    padding-top: 260px;
+    
+  }
+  header div.head h1 {
+    font-size: 2.3rem;
+    border: none;
+  }
+  
+  header div.head p {
+    padding-left: 0px;
+  }
+  
+
+  main section:first-of-type{
+    margin-top: 390px;
+  }
+
+  main section {
+    width: 90%;
+    padding: 10px 0;
+    margin: 50px auto 0px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+  }
+  main section div p {
+    padding: 0px 10px;
+  }
+  
+  footer {
+    padding: 20px 0;
+    text-align: center;
+    grid-template-columns:1fr;
+  
+  }
+  footer ul li a {
+ font-size: 1.8rem;
+  }
+  
 }

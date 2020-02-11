@@ -4,7 +4,7 @@ import React, { Fragment } from "react";
 import { useAuth0 } from "../react-auth0-spa";
 import FormChartData from "../views/FormChartData";
 import './Profile.css'
-import { Container, Row, Col, Card } from 'reactstrap';
+import { Row, Col, Card } from 'reactstrap';
 
 
 const Profile = () => {
@@ -15,13 +15,16 @@ const Profile = () => {
   }
 
   return (
-    <Container className="themed-container" fluid={true}>
+   
       <Fragment>
+        <br></br>
+         <br></br>
         <br></br>
         <br></br>
         <Row>
 
-          <Col sm="1"></Col>
+           <Col sm="1"></Col>
+         
           <Col sm="10" id="infobox">
             <Card>
               <Row>
@@ -59,7 +62,7 @@ const Profile = () => {
         </Row>
       </Fragment>
 
-    </Container>
+    
   );
 };
 

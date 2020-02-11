@@ -1,0 +1,16 @@
+img{
+    height: 80px;
+    width: 100px;
+    margin: auto;
+    
+}
+
+.logout-button {
+    background-color: #8B0000;
+    margin-top: 25px;
+    color: #eee;
+    font-size: 20px;
+    border-radius: 2rem;
+}
+
+

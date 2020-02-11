@@ -1,9 +1,11 @@
 import React from "react";
-import HomeScreen from "../components/homescreen/HomeScreen";
+import Header from "../components/header/Header";
+import Main from '../components/main/Main';
 
 const Home = () => (
   <div>
-    <HomeScreen/>
+    <Header/>
+    <Main />
   </div>
 );
 

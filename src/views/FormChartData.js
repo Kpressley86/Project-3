@@ -7,10 +7,14 @@ const FormChartData = () => {
     return (
         <div>
             <Form />
+            
             <Budget />
+           
             <br></br>
             <br></br>
             <Graph />
+            <br></br>
+            <br></br>
         </div>
     );
 };

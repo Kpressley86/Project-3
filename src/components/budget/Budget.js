@@ -11,26 +11,21 @@ const Budget = () => {
             <Container className="themed-container" fluid={true}>
                 
                     <Row>
-
-                        <Col sm="6">
+                      <Col sm="4">
                             <InputBudget />
-                        </Col>
-                        <Col sm="6">
+                        
                             <InputExpenses />
                         </Col>
 
-                    </Row>
+                        <Col sm="8">
                     <br></br>
                     <br></br>
-                    <Row>
+                   
+                     <DisplayBudget />
 
-
-                        <DisplayBudget />
-
-
+                     </Col>
                     </Row>
-                
-            </Container>
+                </Container>
         </div>
 
     )

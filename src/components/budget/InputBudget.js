@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class InputBudget extends Component {
     render() {
         return (
@@ -11,7 +12,7 @@ class InputBudget extends Component {
                     <label>Estimated Monthly Bills</label>
                     <input className="form-control"
                         name="number" />
-                    <button className="btn btn-dark btn-block mt-3">Submit</button>
+                    <button className="btn btn-primary btn-block mt-3" style={{background: '#2f4f4f'}}>Submit</button>
                 </form>
             </div>
         )
