@@ -22,7 +22,7 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.8.9",
     "@auth0/auth0-spa-js": "^1.6.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "express": "^4.16.3",
     "history": "^4.10.1",
